@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel ='stylesheet' href= "/style1.css">
+    <title>Document</title>
+</head>
+<body>
+    {{!-- <h1>Handlebars Home Page</h1> --}}
+    <nav>
+        <h4>Service Portal</h4>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/userprofile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container mt-4">
+ <div class="card">
+     <div class="card-header">
+         <h1 class="text-center">Order Details</h1>
+     </div>
+  <div class="card-body">
+  <div class= "orders">
+  <form method = "POST" action="/orderspost" >
+  {{!-- enctype="multipart/form-data" > --}}
+    <div class="form-group">
+    <label for="description">Description</label>
+    <input class="form-control input-lg" id="description" name="description" type="text">
+  </div>
+
+     <div class="mb-3">
+        <label for="location" >location(City Name)</label>
+        <input type= "text" name="location" class="location" id="location" ></input>
+    </div><br>
+    <label for="deparment">Choose type of service :</label>
+  <select name="department" id="department">
+    <option value="1">Carpentary</option>
+    <option value="2">Plumbing</option>
+    <option value="3">Domestic</option>
+    <option value="4">Electric</option>
+  </select>
+  <br><br>
+
+    {{!-- <div class="mb-3">
+        <label for="formFileMultiple"  class="form-label">Multiple files input example</label>
+        <input class="form-control" name ="formFileMultiple" type="file" id="formFileMultiple" multiple>
+    </div><br> --}}
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+   </form>
+   </div>
+   </div>
+        
+            
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+</html>

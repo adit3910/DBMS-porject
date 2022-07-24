@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel ='stylesheet' href= "/style1.css">
+    <title>Document</title>
+</head>
+<body>
+    {{!-- <h1>Handlebars Home Page</h1> --}}
+    <nav>
+        <h4>Node MySQL</h4>
+        <ul>
+            <li><a href="/userindex">Home</a></li>
+            <li><a href="/userprofile">Profile</a></li>
+            <li><a href="/auth/logout">Logout</a></li>
+        </ul>
+    </nav>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                   <div class="avatar-ctn">
+                       <img src = "/profile.png" class= "avatar" alt ="user profile picture"/>
+                   </div>
+                <div class="card-body">
+               <h5 class= "card-title">{{user.name}}</h5>
+               <p class="card-text">This is {{user.name}}'s Profile</p>
+                <a href="#" class="btn btn-primary">{{user.email}}</a>
+            </div>
+        </div>
+    </div>
+    
+
+            <div class="col-8">
+                <div class= "card text-centr">
+                    <div class="card-header">
+                        Profile Page
+                    </div>
+                    <div class="card-body">
+                        <h5 class="title">hey {{user.name}} Welcome back</h5>
+                        <p class="card-text">Here is your all information</p>
+                        <a href="/orders" class="btn btn--primary">Place an Order</a>
+                        <div class="card-footer text-muted">
+                            Node My-SQL Project
+                        </div>
+                      </div>
+                        </div>
+                   
+                         <div class="text-center gy-3 my-3">
+           <h2>My Projects</h2>
+       </div>
+        
+ {{#each answers}}
+ {{#if this.pid}}
+ {{else}}
+<div class="card text-center text-white bg-dark gy-3 my-3">    
+  <div class="card-body"> 
+    
+    <p class="card-text">{{this.description}}</p>
+    <p class="card-text" id="pr">Project_id={{this.id}}</p> 
+     <p class="card-text">Status-Waiting</p>    
+</div>
+</div>
+{{/if}}
+{{/each}}
+
+ {{#each rows}}
+      {{#if this.total}}
+
+      {{else}}
+        <div class="card text-center text-white bg-success gy-3 my-3">    
+  <div class="card-body"> 
+ 
+    <p class="card-text">{{this.description}}</p>
+     <p class="card-text">Professional Name-{{this.prof_name}}</p>
+     <p class="card-text">Phone number-{{this.phone_no}}</p>
+     <p class="card-text">Status-Accepted</p>
+      </div>
+                </div>
+{{/if}}
+{{/each}}
+
+   
+            </div>
+        
+        
+            
+    </div>
+
+   <div class="container mt-4 text-center">
+ 
+            <div class="text-center">
+                <h4>Projects completed</h4>
+                </div>
+                 <div class="row gy-3 my-3 text-center">
+    {{#each comp}}
+
+<div class="card text-center gy-3 my-3 ml-3">    
+  <div class="card-body"> 
+      <h5 class="title">Bill</h5>
+      <p class="card-text">{{this.prof_name}}</p>
+     <p class="card-text">work description:{{this.descwork}}</p>
+    <p class="card-text">Days Worked:{{this.daysworked}}</p>
+    <p class="card-text" id="pr">Ammount:{{this.total}}</p> 
+     <p class="card-text" id="pr">Contact Deatils:{{this.phone_no}}</p> 
+
+</div>
+</div>
+
+{{/each}}
+</div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</body>
+</html>
