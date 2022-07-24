@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+   
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+     <h4>Welcome Professional!!!</h4>
+     <ul>
+         <li><a href="/">Home</a></li>
+         <li><a href="/login">Login</a></li>
+         <li><a href="/register">Register</a></li>
+     </ul>
+    </nav>
+<div class="container mt-4">
+ <div class="card">
+     <div class="card-header">
+         Register Form
+     </div>
+  <div class="card-body">
+    <form action="/auth/register" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="prof_name">
+  </div>
+<div class="form-group">
+    <label for="email">Email adress</label>
+    <input type="email" class="form-control" id="email" name="prof_email">
+  </div>
+<div class="form-inline">
+   <div class="form-mine">
+    <label for="loc_address">Address</label>
+    <input type="text" class="form-control" id="address" name="loc_add">
+   </div>   
+     <select class="form-select" id="city" name="prof_city">
+       <option value="0">Enter City</option>
+       <option value="1">Banglore</option>
+       <option value="2">Delhi</option>
+       <option value="3">Mumbai</option>
+       <option value="4">Chennai</option>
+        <option value="5">Kolkata</option>
+     </select>
+
+    
+  </div>
+ <div class="form-group">
+    <label for="aadhar">Aadhaar</label>
+    <input type="text" class="form-control" id="aadhar" name="aadhar_no">
+  </div>
+  <div class="form-group">
+    <label for="phone">Phone no.</label>
+    <input type="phone" class="form-control" id="phone" name="phone_no">
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type="password" class="form-control" id="password" name="prof_password">
+  </div>
+   <div class="form-group">
+    <label for="passwordConfirm">Confirm Password</label>
+    <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm">
+   
+  </div>
+   <button type="submit" class="btn btn-primary">Register</button>
+  
+</form>
+  </div>
+</div>
+  </div>
+</div>
+
+{{#if message}}
+<h4 class="alert alert-danger mt-4">{{message}}</h4>
+{{/if}}
+
+</div>
+</body>
+</html>

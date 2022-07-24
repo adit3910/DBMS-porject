@@ -1,0 +1,64 @@
+nav{
+    background-color:	rgb(205, 133, 63,0.8);
+    color: #fff;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+}
+body {
+    background-image: url("/bgu.png");
+    background-size:auto;
+    background-color: white;
+   }
+
+
+nav ul{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+
+nav li{
+    list-style: none;
+}
+
+nav li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+nav li a:hover{
+    color: yellow;
+    text-decoration:none;
+}
+.about{
+    background-color: rgba(255, 254, 254, 0.8);
+   width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    
+}
+
+
+.avatar-ctn{
+    background-color: grey;
+    text-align: center;
+}
+
+.avatar{
+    width: 65%;
+    border-bottom: 1px solid rgbs(0,0,0,1,25);
+}
+
+.description{
+    
+    height: 300px;
+  width: 600px;
+  padding: 10px;
+  margin: 20px;
+}
+.orders{
+    padding: 10px;
+    margin-left: 30px;
+}
