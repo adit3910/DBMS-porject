@@ -8,6 +8,7 @@ dotenv.config({path:'./.env'});
 const app =express();
 const exphbs  = require('express-handlebars');
 const { options } = require("./routes/auth");
+const PORT=process.env.PORT || 4000;
 const db=mysql.createConnection({
     host:process.env.DATABASE_HOST,
     user:process.env.DATABASE_USER,
@@ -47,8 +48,8 @@ function setup_helper(){
 app.use('/',require('./routes/pages'));
 app.use('/auth',require('./routes/auth'));
 
-app.listen(4000,()=>{
-    console.log("server started on 4000");
+app.listen(PORT,()=>{
+    console.log(`server started on ${PORT}`);
 });
 
 var hbs = exphbs.create({
